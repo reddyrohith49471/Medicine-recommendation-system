@@ -315,7 +315,7 @@ def home():
         print(symptoms)
         if symptoms =="Symptoms":
             message = "Please either write symptoms or you have written misspelled symptoms"
-            return render_template('index.html', message=message)
+            return render_template_string(html_template, message=message)
         else:
             user_symptoms = [s.strip() for s in symptoms.split(',')]
             user_symptoms = [symptom.strip("[]' ") for symptom in user_symptoms]
@@ -326,11 +326,11 @@ def home():
             for i in precautions[0]:
                 my_precautions.append(i)
 
-            return render_template('index.html', predicted_disease=predicted_disease, dis_des=dis_des,
+            return render_template_string(html_template, predicted_disease=predicted_disease, dis_des=dis_des,
                                    my_precautions=my_precautions, medications=medications, my_diet=rec_diet,
                                    workout=workout)
 
-    return render_template('index.html')
+    return render_template_string(html_template)
 
 
 

@@ -5,14 +5,14 @@ import pickle
 
 app = Flask(__name__)
 
-sym_des = pd.read_csv("Datasets/symtoms_df.csv")
-precautions = pd.read_csv("Datasets/precautions_df.csv")
-workout = pd.read_csv("Datasets/workout_df.csv")
-description = pd.read_csv("Datasets/description.csv")
-medications = pd.read_csv('Datasets/medications.csv')
-diets = pd.read_csv("Datasets/diets.csv")
+sym_des = pd.read_csv("symtoms_df.csv")
+precautions = pd.read_csv("precautions_df.csv")
+workout = pd.read_csv("workout_df.csv")
+description = pd.read_csv("description.csv")
+medications = pd.read_csv('medications.csv')
+diets = pd.read_csv("diets.csv")
 
-svc = pickle.load(open('model/svc.pkl','rb'))
+svc = pickle.load(open('svc.pkl','rb'))
 
 
 
